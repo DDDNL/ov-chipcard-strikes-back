@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'host' => 'squirrel.rmq.cloudamqp.com',
+    'vhost' => '',
+    'user' => '',
+    'password' => '',
+    'queue' => '',
+    'listenTime' => 10
+];

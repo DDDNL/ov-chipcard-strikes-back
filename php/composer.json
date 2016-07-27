@@ -1,0 +1,8 @@
+{
+    "autoload": {
+        "psr-4": {"": "src/"}
+    },
+    "require": {
+        "bunny/bunny": "^0.2.3"
+    }
+}
