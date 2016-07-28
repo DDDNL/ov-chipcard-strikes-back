@@ -6,7 +6,7 @@ This repository will house the infrastructure required to send and receive messa
 Domain
 ------
 
-We will again focus on the domain of the [Dutch OV-Chiphcard][2]. In particular these functionalities:
+We will again focus on the domain of the [Dutch OV-Chipcard][2]. In particular these functionalities:
 
 1. [Pay for travel by Check-In and Check-Out](./1. Pay for travel by Check-In and Check-Out.feature)
 2. [Review my travel history](./2. Review my travel history.feature)

@@ -12,6 +12,7 @@ $config = Config::create();
 $client = new Client($config->toArray());
 $client->connect();
 $channel = $client->channel();
+$channel->queueDeclare($config->queueName());
 $channel->publish($message, [], '', $config->queueName());
 
 echo "Added 1 new message to the queue {$config->queueName()} with content: $message" . PHP_EOL;
