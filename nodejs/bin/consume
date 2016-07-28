@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+let q = process.env.QUEUE_NAME || 'node-ov-chipcard';
+let url = process.env.RABBIT_URL || 'amqp://localhost';
+
+let connection = require('amqplib').connect(url);
+
+let channel = connection.then(function(conn) {
+    return conn.createChannel();
+});
+
+channel.then(function(ch) {
+    return ch.assertQueue(q).then(function (ok) {
+        ch.consume(q, function(msg) {
+            if (msg !== null) {
+                ch.ack(msg);
+                let content = msg.content.toString();
+                console.log(`Received 1 new message from the queue ${q} with content: ${content}`);
+            }
+        });
+    });
+}).catch(console.warn);
