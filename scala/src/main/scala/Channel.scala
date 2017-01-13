@@ -8,14 +8,14 @@ import io.circe._, generic.auto._, parser._, syntax._
 
 
 class Channel(
-  host: String = "docker-host",
+  brokerUri: String = "amqp://guest:guest@localhost:5672/%2f",
   exchange: String = "",
   queue: String = "ov-chipcard"
 ) {
   private val log = getLogger("Channel")
 
   private val factory = new ConnectionFactory {
-    setHost(host)
+    setUri(brokerUri)
   }
 
   private val connection = factory.newConnection()

@@ -5,8 +5,6 @@ object Producer extends App {
   val log = org.slf4j.LoggerFactory.getLogger("Producer")
 
   val channel = new Channel(
-    host = "localhost",
-    exchange = "",
     queue = "ov-chipcard"
   )
 
